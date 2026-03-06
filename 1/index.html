@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2b2b2b;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 0.95em;
+            color: #ccc;
+        }
+
+        nav {
+            background-color: #3a3a3a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 850px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #fafafa;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #222;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #c0392b;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            font-size: 1.15em;
+            color: #444;
+            margin-top: 18px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .joke {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 18px;
+            padding: 12px;
+            background-color: #f4f4f4;
+            border-left: 3px solid #c0392b;
+            border-radius: 4px;
+        }
+
+        .joke img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .joke div {
+            flex: 1;
+        }
+
+        .joke h3 {
+            margin-top: 0;
+            font-size: 1em;
+        }
+
+        .joke-num {
+            font-weight: bold;
+            color: #c0392b;
+            margin-right: 5px;
+        }
+
+        .video-img {
+            display: block;
+            max-width: 100%;
+            border-radius: 4px;
+            margin: 15px 0;
+        }
+
+        dl {
+            margin: 12px 0;
+        }
+
+        dt {
+            font-weight: bold;
+            color: #333;
+            margin-top: 6px;
+        }
+
+        dd {
+            margin-left: 18px;
+            color: #555;
+        }
+
+        .review {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        .rating {
+            font-size: 1.3em;
+            color: #c0392b;
+            margin-bottom: 8px;
+        }
+
+        blockquote {
+            background-color: #f9f9f9;
+            border-left: 3px solid #555;
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        blockquote cite {
+            display: block;
+            margin-top: 6px;
+            font-style: normal;
+            font-size: 0.85em;
+            color: #999;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 12px;
+            font-size: 0.9em;
+        }
+
+        table caption {
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 8px;
+            font-size: 1em;
+        }
+
+        thead {
+            background-color: #2b2b2b;
+            color: #fff;
+        }
+
+        th {
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 8px 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tbody tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        tfoot {
+            background-color: #eee;
+            font-weight: bold;
+        }
+
+        .win {
+            color: green;
+            font-weight: bold;
+        }
+
+        .draw {
+            color: orange;
+            font-weight: bold;
+        }
+
+        .loss {
+            color: red;
+            font-weight: bold;
+        }
+
+        .upcoming {
+            color: gray;
+            font-style: italic;
+        }
+
+        .interrupted {
+            background-color: #fff8e1;
+        }
+
+        ul, ol {
+            margin: 10px 0 10px 25px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        a {
+            color: #2b6cb0;
+        }
+
+        a:hover {
+            color: #c0392b;
+        }
+
+        code {
+            background-color: #eee;
+            padding: 1px 4px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        footer {
+            background-color: #2b2b2b;
+            color: #aaa;
+            text-align: center;
+            padding: 18px 15px;
+            margin-top: 25px;
+            font-size: 0.85em;
+        }
+
+        footer a {
+            color: #ddd;
+        }
+
+        @media (max-width: 600px) {
+            .joke {
+                flex-direction: column;
+            }
+
+            .joke img {
+                width: 100%;
+                height: auto;
+            }
+
+            nav a {
+                display: block;
+                margin: 4px 0;
+            }
+
+            header h1 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Лабораторная работа №1</h1>
+    <p>Введение в веб-программирование - HTML &amp; CSS</p>
+</header>
+
+<nav>
+    <a href="#jokes">Анекдоты</a>
+    <a href="#content">Контент</a>
+    <a href="#review">Отзыв</a>
+    <a href="#quotes">Цитаты</a>
+    <a href="#schedule">Расписание</a>
+</nav>
+
+<main>
+    <section id="jokes">
+        <h2>Смешные анекдоты</h2>
+
+        <article class="joke">
+            <img src="https://i.imgur.com/TqIq3qK.png" alt="Анекдот про бабушку">
+            <div>
+                <h3><span class="joke-num">1.</span> Анекдот про бабушку</h3>
+                <p>- Твоя бабушка такая веселая! Все время улыбается!<br>- Да это ей зубной протез не того размера вставили!</p>
+            </div>
+        </article>
+
+        <article class="joke">
+            <img src="https://i.imgur.com/ZdOMKNX.png" alt="ИИ и Бог">
+            <div>
+                <h3><span class="joke-num">2.</span> ИИ и Бог</h3>
+                <p>Обратились создатели ИИ к Богу и стали жаловаться:
+                    - Господи, мы создали Искусственный Интеллект, а он оказался лживым, хитрым и безответственным!
+                    И сказал им Господь:
+                    - Вот, теперь вы меня понимаете!</p>
+            </div>
+        </article>
+
+        <article class="joke">
+            <img src="https://i.imgur.com/N3KRDS5.png" alt="Не знаю, как назвать">
+            <div>
+                <h3><span class="joke-num">3.</span> Не знаю, как назвать</h3>
+                <p>Штирлиц проснулся в камере. Как сюда попал, не помнит. Думает: «Если войдут русские, скажу, что я полковник Исаев. Если немцы – штандартенфюрер Штирлиц».<br>Входит милиционер:<br>-Ну, и напились Вы вчера, товарищ Тихонов!</p>
+            </div>
+        </article>
+
+        <article class="joke">
+            <img src="https://i.imgur.com/6HGVoRx.png" alt="CSS мем">
+            <div>
+                <h3><span class="joke-num">4.</span> CSS - это магия</h3>
+                <p>- Как у тебя всё выровнено?<br>
+                    - Я добавил <code>margin-left: -3px</code>.<br>
+                    - Почему 3?<br>
+                    - Если 2 - криво. 4 - тоже криво. Не спрашивай.</p>
+            </div>
+        </article>
+    </section>
+
+    <section id="content">
+        <h2>Последний просмотренный контент</h2>
+        <h3>Видео: «The Egg» - Kurzgesagt (YouTube)</h3>
+
+        <a href="https://www.youtube.com/watch?v=h6fcK_fRYaI" target="_blank">
+            <img class="video-img" src="https://img.youtube.com/vi/h6fcK_fRYaI/maxresdefault.jpg" alt="The Egg - Kurzgesagt">
+        </a>
+
+        <dl>
+            <dt>Канал</dt>
+            <dd>Kurzgesagt - In a Nutshell</dd>
+            <dt>Дата</dt>
+            <dd>1 сентября 2019</dd>
+            <dt>Просмотры</dt>
+            <dd>35+ млн</dd>
+            <dt>Длительность</dt>
+            <dd>7:44</dd>
+        </dl>
+
+        <h3>О чём видео</h3>
+        <p>
+            Видео основано на рассказе <strong>Энди Вейера</strong>. Человек погибает в аварии и попадает в загробное пространство, где некое высшее существо объясняет ему устройство вселенной.
+        </p>
+        <p>
+            Оказывается, все люди, когда-либо жившие на Земле - это одна и та же душа, проживающая разные жизни. Вселенная - это «яйцо», в котором эта душа набирает опыт и мудрость.
+        </p>
+        <p>Основные идеи:</p>
+        <ul>
+            <li>Причиняя боль другим - причиняешь боль себе</li>
+            <li>Каждый акт доброты - подарок самому себе</li>
+            <li>Смерть - не конец, а переход к новому опыту</li>
+            <li>Вселенная существует ради развития сознания</li>
+        </ul>
+    </section>
+
+    <section id="review">
+        <h2>Мой отзыв</h2>
+        <div class="review">
+            <div class="rating">★★★★★ 10/10</div>
+            <p>
+                Видео поразило простотой и глубиной. За 8 минут авторы задали вопросы, над которыми философы думают тысячелетиями, и сделали это доступно.
+            </p>
+            <p>
+                Главная мысль - все люди по сути одно существо - сначала звучит абсурдно. Но потом понимаешь: если бы каждый верил, что причиняя боль другому он причиняет боль себе - мир стал бы другим.
+            </p>
+            <p>
+                Анимация от Kurzgesagt на высшем уровне. После просмотра перечитал оригинальный рассказ и потом долго сидел и думал.
+            </p>
+        </div>
+    </section>
+
+    <section id="quotes">
+        <h2>Цитаты из видео</h2>
+
+        <blockquote>
+            «Every person you've ever met, every person who has ever lived, is you.»
+            <cite>- Рассказчик, «The Egg»</cite>
+        </blockquote>
+
+        <blockquote>
+            «You are the universe experiencing itself.»
+            <cite>- Высшее существо</cite>
+        </blockquote>
+
+        <blockquote>
+            «The meaning of life, the reason I made this whole universe, is for you to mature.»
+            <cite>- Объяснение смысла вселенной</cite>
+        </blockquote>
+    </section>
+
+    <section id="schedule">
+        <h2>Расписание матчей ФК «Ростов»</h2>
+        <p>Вариант <strong>N = 26</strong>. Формула: <code>(26 % 16) + 1 = 11</code> → <strong>ФК «Ростов»</strong> (11 место в таблице РПЛ).</p>
+
+        <table>
+            <caption>Матчи ФК «Ростов» - январь–февраль 2026</caption>
+            <thead>
+            <tr>
+                <th>Дата</th>
+                <th>Время</th>
+                <th>Соперник</th>
+                <th>Счёт</th>
+                <th>Турнир</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>17.01</td>
+                <td>16:00</td>
+                <td>Чэнду Жунчэн</td>
+                <td class="win">3 : 0</td>
+                <td>Товарищеский</td>
+            </tr>
+            <tr>
+                <td>24.01</td>
+                <td>16:00</td>
+                <td>Локомотив</td>
+                <td class="draw">1 : 1</td>
+                <td>Товарищеский</td>
+            </tr>
+            <tr>
+                <td>01.02</td>
+                <td>16:00</td>
+                <td>Родина</td>
+                <td class="loss">0 : 1</td>
+                <td>Товарищеский</td>
+            </tr>
+            <tr>
+                <td>04.02</td>
+                <td>16:00</td>
+                <td>Ноа (Армения)</td>
+                <td class="win">3 : 0</td>
+                <td>Товарищеский</td>
+            </tr>
+            <tr>
+                <td>07.02</td>
+                <td>16:00</td>
+                <td>Циндао Вест Кост</td>
+                <td class="win">2 : 0</td>
+                <td>Товарищеский</td>
+            </tr>
+            <tr class="interrupted">
+                <td>11.02</td>
+                <td>16:00</td>
+                <td>Чжэцзян (Китай)</td>
+                <td><em>Прерван</em></td>
+                <td>Товарищеский</td>
+            </tr>
+            <tr>
+                <td>18.02</td>
+                <td>16:00</td>
+                <td>ЦСКА (в)</td>
+                <td class="upcoming">-</td>
+                <td>Товарищеский</td>
+            </tr>
+            <tr>
+                <td>21.02</td>
+                <td>16:00</td>
+                <td>Спартак М (в)</td>
+                <td class="upcoming">-</td>
+                <td>Товарищеский</td>
+            </tr>
+            <tr>
+                <td>28.02</td>
+                <td>14:30</td>
+                <td>Краснодар (в)</td>
+                <td class="upcoming">-</td>
+                <td>РПЛ, тур 19</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5">Итого: 9 матчей | 3 победы, 1 ничья, 1 поражение, 1 прерван, 3 предстоят</td>
+            </tr>
+            </tfoot>
+        </table>
+
+        <h3>Положение в таблице</h3>
+        <p>Ростов на зимней паузе - <strong>11 место</strong> в РПЛ (21 очко, 18 матчей). Тренер - Джонатан Альба.</p>
+        <ol>
+            <li>18 матчей сыграно</li>
+            <li>21 очко набрано</li>
+            <li>6 очков от зоны стыковых</li>
+        </ol>
+    </section>
+
+</main>
+
+<footer>
+    <address>
+        <p>Автор: Абдуллаев Илёсбек, вариант №26</p>
+    </address>
+    <p>© 2026 - РХТУ, веб-программирование</p>
+</footer>
+
+</body>
+</html>
