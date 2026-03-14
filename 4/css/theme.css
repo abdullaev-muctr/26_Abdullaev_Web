@@ -1,0 +1,328 @@
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: var(--cream);
+    color: var(--black);
+    border: none;
+    padding: 10px 18px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#theme-toggle:hover {
+    background-color: var(--gold);
+}
+
+.light-theme {
+    background-color: #f2ede6;
+    color: #222;
+}
+
+.light-theme header {
+    background-color: #f2ede6;
+}
+
+.light-theme nav {
+    border-bottom-color: #ccc;
+}
+
+.light-theme nav .logo {
+    color: #8b1a1a;
+}
+
+.light-theme nav ul li a {
+    color: #666;
+}
+
+.light-theme nav ul li a:hover {
+    color: #8b1a1a;
+}
+
+.light-theme .hero h1 {
+    color: #1a1a1a;
+}
+
+.light-theme .hero .tagline {
+    color: #8b1a1a;
+}
+
+.light-theme .hero .subtitle {
+    color: #666;
+}
+
+.light-theme .hero img {
+    filter: drop-shadow(0 0 40px rgba(196, 30, 30, 0.15));
+}
+
+.light-theme .scroll-hint {
+    color: #bbb;
+}
+
+.light-theme .ticker {
+    background-color: #1a1a1a;
+    color: #f2ede6;
+}
+
+.light-theme .reasons h2,
+.light-theme .slogans h2,
+.light-theme .reviews h2,
+.light-theme .center-content h2 {
+    color: #1a1a1a;
+}
+
+.light-theme .reasons .section-sub {
+    color: #8b1a1a;
+}
+
+.light-theme .reason-card {
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+.light-theme .reason-card .num {
+    color: #c41e1e;
+}
+
+.light-theme .reason-card h3 {
+    color: #222;
+}
+
+.light-theme .reason-card p {
+    color: #555;
+}
+
+.light-theme .slogans {
+    border-top-color: #ddd;
+    border-bottom-color: #ddd;
+}
+
+.light-theme .slogan-item {
+    color: #333;
+    border-left-color: #c41e1e;
+}
+
+.light-theme .slogan-item span {
+    color: #8b1a1a;
+}
+
+.light-theme .reviews .section-sub {
+    color: #888;
+}
+
+.light-theme .review-card {
+    background-color: #fff;
+    border-color: #ddd;
+}
+
+.light-theme .review-card .stars {
+    color: #c9a84c;
+}
+
+.light-theme .review-card .text {
+    color: #333;
+}
+
+.light-theme .review-card .author {
+    color: #888;
+}
+
+.light-theme .review-card img {
+    border-color: #ddd;
+}
+
+.light-theme .ad-banner {
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.light-theme .ad-banner .ad-label {
+    color: #bbb;
+}
+
+.light-theme .ad-banner p {
+    color: #333;
+}
+
+.light-theme .center-content {
+    border-color: #ddd;
+}
+
+.light-theme .center-content p {
+    color: #555;
+}
+
+.light-theme .warning {
+    background-color: #eee;
+    border-color: #ccc;
+}
+
+.light-theme .warning p {
+    color: #999;
+}
+
+.light-theme footer {
+    background-color: #1a1a1a;
+}
+
+.light-theme #theme-toggle {
+    background-color: #1a1a1a;
+    color: #f2ede6;
+}
+
+.light-theme #theme-toggle:hover {
+    background-color: #333;
+}
+
+.review-form-section {
+    padding: 50px 0;
+    border-top: 1px solid #1a1a1a;
+}
+
+.review-form-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5em;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.light-theme .review-form-section {
+    border-top-color: #ddd;
+}
+
+.light-theme .review-form-section h3 {
+    color: #1a1a1a;
+}
+
+#review-form {
+    max-width: 520px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#review-form label {
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.light-theme #review-form label {
+    color: #666;
+}
+
+#review-form input[type="text"],
+#review-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1em;
+    color: var(--cream);
+    background-color: var(--dark);
+    border: 1px solid #333;
+    border-radius: 3px;
+    resize: vertical;
+}
+
+.light-theme #review-form input[type="text"],
+.light-theme #review-form textarea {
+    color: #222;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+#review-form input[type="text"]:focus,
+#review-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.light-theme #review-form input[type="text"]:focus,
+.light-theme #review-form textarea:focus {
+    border-color: #8b1a1a;
+}
+
+#review-form textarea {
+    min-height: 100px;
+}
+
+#review-form input[type="file"] {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.9em;
+    color: var(--muted);
+}
+
+.light-theme #review-form input[type="file"] {
+    color: #666;
+}
+
+#review-form button[type="submit"] {
+    background-color: var(--red);
+    color: var(--white);
+    border: none;
+    padding: 14px 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+    border-radius: 3px;
+    align-self: center;
+}
+
+#review-form button[type="submit"]:hover {
+    background-color: #e03030;
+}
+
+#review-form button[type="submit"]:active {
+    background-color: #8b1a1a;
+}
+
+#review-error {
+    display: none;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--red);
+    padding: 8px;
+}
+
+.light-theme #review-error {
+    color: #c41e1e;
+}
+
+.input-error {
+    border-color: var(--red) !important;
+}
+
+@media (max-width: 480px) {
+    #review-form {
+        padding: 0 10px;
+    }
+
+    .review-form-section h3 {
+        font-size: 1.2em;
+    }
+
+    #theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 320px) {
+    #theme-toggle {
+        padding: 6px 10px;
+        font-size: 0.75em;
+    }
+}

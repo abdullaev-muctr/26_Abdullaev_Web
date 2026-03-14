@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MARLBORO — Come to where the flavor is</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/theme.css">
 </head>
 <body>
-
+  <button id="theme-toggle">☀ Светлая</button>
   <header>
     <nav>
       <div class="logo">Marlboro</div>
@@ -95,27 +96,25 @@
         <h2>Свидетельства обращённых</h2>
         <p class="section-sub">реальные отзывы реальных людей* (*возможно, нет)</p>
 
-        <div class="reviews-flex">
-          <article class="review-card">
-            <img src="img/seventy-twos.jpg" alt="Marlboro Seventy Twos — крупный план пачки">
-            <div class="stars">★★★★★</div>
-            <p class="text">«Начал курить Marlboro — жена ушла, кот сбежал, на работе повысили. Совпадение? Не думаю. 10/10.»</p>
-            <p class="author">— Ковбой Алексей, 34 года, Саратов</p>
-          </article>
+        <div class="reviews-flex" id="reviews-list">
 
-          <article class="review-card">
-            <img src="img/naked-girl.jpg" alt="Marlboro сексуальная девушка">
-            <div class="stars">★★★★★</div>
-            <p class="text">«Раньше я был обычным офисным работником. Теперь я обычный офисный работник с Marlboro. Чувствую разницу.»</p>
-            <p class="author">— Дмитрий «Дым» Петров, бухгалтер</p>
-          </article>
+        </div>
 
-          <article class="review-card">
-            <img src="img/marlboro-aesthetic.jpg" alt="Marlboro эстетика">
-            <div class="stars">★★★★☆</div>
-            <p class="text">«Купил пачку ради эстетики. Поставил на полку. Любуюсь. Сама по себе красивая штука. Курить не начал, но пачку обожаю.»</p>
-            <p class="author">— Артём, коллекционер, 22 года</p>
-          </article>
+        <div class="review-form-section">
+          <h3>Оставить отзыв</h3>
+          <form id="review-form">
+            <label for="review-name">Имя</label>
+            <input type="text" id="review-name" placeholder="Как тебя зовут, ковбой?">
+
+            <label for="review-text">Отзыв</label>
+            <textarea id="review-text" placeholder="Расскажи о своём опыте..."></textarea>
+
+            <label for="review-image">Фото (необязательно)</label>
+            <input type="file" id="review-image" accept="image/*">
+
+            <div id="review-error"></div>
+            <button type="submit">Отправить</button>
+          </form>
         </div>
       </section>
 
@@ -154,6 +153,7 @@
     <div class="footer-logo">Marlboro</div>
     <p>© 2026 — Это не настоящая реклама. Это лабораторная работа №2.</p>
   </footer>
-
+  <script src="js/cookie.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
