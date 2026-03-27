@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Dashboard - Лаб 5</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">API Dashboard</div>
+      <ul>
+        <li><a href="#" class="nav-link active" data-section="posts">Посты</a></li>
+        <li><a href="#" class="nav-link" data-section="users">Пользователи</a></li>
+        <li><a href="#" class="nav-link" data-section="products">Товары</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!--  ПОСТЫ (JSONPlaceholder)  -->
+    <section id="posts" class="api-section active">
+      <div class="section-header">
+        <h2>Посты</h2>
+        <p class="api-badge">JSONPlaceholder - <code>jsonplaceholder.typicode.com/posts</code></p>
+      </div>
+
+      <div class="form-card">
+        <h3>Добавить пост <span class="method-tag post">POST</span></h3>
+        <form id="post-form">
+          <input type="text" id="post-title" placeholder="Заголовок" required>
+          <textarea id="post-body" placeholder="Текст поста..." required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+        <div class="form-status" id="post-form-status"></div>
+      </div>
+
+      <h3>Все посты <span class="method-tag get">GET</span></h3>
+      <div class="items-grid" id="posts-list">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+
+    <!--  ПОЛЬЗОВАТЕЛИ (ReqRes)  -->
+    <section id="users" class="api-section">
+      <div class="section-header">
+        <h2>Пользователи</h2>
+        <p class="api-badge">DummyJSON - <code>dummyjson.com/users</code></p>
+      </div>
+
+      <div class="form-card">
+        <h3>Добавить пользователя <span class="method-tag post">POST</span></h3>
+        <form id="user-form">
+          <input type="text" id="user-name" placeholder="Имя" required>
+          <input type="text" id="user-job" placeholder="Должность" required>
+          <button type="submit">Создать</button>
+        </form>
+        <div class="form-status" id="user-form-status"></div>
+      </div>
+
+      <h3>Все пользователи <span class="method-tag get">GET</span></h3>
+      <div class="items-grid" id="users-list">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+
+    <!--  ТОВАРЫ (DummyJSON)  -->
+    <section id="products" class="api-section">
+      <div class="section-header">
+        <h2>Товары</h2>
+        <p class="api-badge">DummyJSON - <code>dummyjson.com/products</code></p>
+      </div>
+
+      <div class="form-card">
+        <h3>Добавить товар <span class="method-tag post">POST</span></h3>
+        <form id="product-form">
+          <input type="text" id="product-title" placeholder="Название товара" required>
+          <input type="number" id="product-price" placeholder="Цена" min="0" step="0.01" required>
+          <button type="submit">Добавить</button>
+        </form>
+        <div class="form-status" id="product-form-status"></div>
+      </div>
+
+      <h3>Все товары <span class="method-tag get">GET</span></h3>
+      <div class="items-grid" id="products-list">
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Модалка редактирования -->
+  <div class="modal-overlay" id="edit-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Редактирование</h3>
+        <button class="modal-close" id="modal-close">&times;</button>
+      </div>
+      <form id="edit-form">
+        <div id="edit-fields"></div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-save">Сохранить <span class="method-tag put">PUT</span></button>
+          <button type="button" class="btn-cancel" id="modal-cancel">Отмена</button>
+        </div>
+      </form>
+      <div class="form-status" id="edit-form-status"></div>
+    </div>
+  </div>
+
+  <!-- Тост-уведомления -->
+  <div id="toast-container"></div>
+
+  <footer>
+    <p>Лабораторная работа №5 - Работа с API</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+</body>
+</html>
